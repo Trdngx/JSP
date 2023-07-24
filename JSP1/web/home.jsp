@@ -29,5 +29,25 @@
         <h4>
            Dien tich la: <%= f.format(Math.PI*r*r) %> 
         </h4>
+        <h1>Bai 1 - C1: Xu ly hoan toan bang jsp</h1>
+        <form>
+            enter radius: <input type="text" name="r"/><br>
+            <input type="submit" value="SUBMIT"/>
+            <%
+                if(request.getParameter("r")!= null){
+                    String r_raw= (request.getParameter("r"));
+                    double r1;
+                    try{
+                        r1= Double.parseDouble(r_raw);
+                        double s=r1*r1*Math.PI;
+            %>
+            <h2> Dien tich S la: <%= s %></h2>
+            <%
+                }catch(Exception e){
+                    System.out.print(e);
+                }
+                }
+            %>
+        </form>
     </body>
 </html>
