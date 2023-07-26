@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.List" %>
+<%@page import="model.Student" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,7 +22,20 @@
                 <th>Date of birth</th>
                 <th>Gender</th>
             </tr>
-            
+            <% 
+                List<Student> list = (List<Student>) request.getAttribute("data");
+                //liet ke danh sach
+                for(Student i:list){
+            %>
+            <tr>
+                <td><%= i.getId()%></td>
+                <td><%= i.getName()%></td>
+                <td><%= i.getDob()%></td>
+            </tr>
+            <%
+                
+                }
+            %>
         </table>
     </body>
 </html>
