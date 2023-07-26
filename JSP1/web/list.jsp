@@ -31,6 +31,11 @@
                 <td><%= i.getId()%></td>
                 <td><%= i.getName()%></td>
                 <td><%= i.getDob()%></td>
+                <td>
+                    <img <%= (i.isGender()?"src='images/male.png'":"src='images/female.png'") %> 
+                            width="30px" height="30px"/>
+                </td>
+                
             </tr>
             <%
                 
